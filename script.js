@@ -58,17 +58,17 @@ const selectValue = () => {
 }
 
 const checkColor = note => {
-	switch (selectValue) {
-		case 'Zakupy':
-			note.style.backgroundColor = 'rgb(72,255,0)'
-			break
-		case 'Praca':
-			note.style.backgroundColor = 'rgb(255,243,0)'
-			break
-		case 'Inne':
-			note.style.backgroundColor = 'rgb(0,170,255)'
-			break
-	}
+	switch (selectedValue) {
+        case 'Zakupy':
+            note.style.backgroundColor = 'rgb(72,255,0)';
+            break;
+        case 'Praca':
+            note.style.backgroundColor = 'rgb(255,243,0)';
+            break;
+        case 'Inne':
+            note.style.backgroundColor = 'rgb(0,170,255)';
+            break;
+    }
 }
 
 const deleteNote = id => {
@@ -76,6 +76,11 @@ const deleteNote = id => {
 	noteArea.removeChild(noteToDelete)
 }
 
+const deleteAllNotes = () => {
+	noteArea.textContent = ''
+}
+
 addBtn.addEventListener('click', openPanel)
 cancelBtn.addEventListener('click', closePanel)
 saveBtn.addEventListener('click', createNote)
+deleteAllBtn.addEventListener('click', deleteAllNotes)
